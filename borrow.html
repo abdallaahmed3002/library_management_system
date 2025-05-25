@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add required libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-hand-holding-book"></i> Borrow Management</h1>
+            <nav>
+                <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+                <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </nav>
+        </header>
+
+        <div class="dashboard-content">
+            <!-- Available Books Section -->
+            <section class="available-books">
+                <h2><i class="fas fa-book"></i> Available Books</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInputBorrow" placeholder="Search books...">
+                    <button id="searchBorrowBtn" type="button"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <table id="availableBooksTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="availableBooksTableBody">
+                        <!-- Books will be populated here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Pending Requests Section (Librarian View) -->
+            <section id="pendingRequests" class="pending-requests admin-only">
+                <h2><i class="fas fa-clock"></i> Pending Requests</h2>
+                <table id="pendingRequestsTable">
+                    <thead>
+                        <tr>
+                            <th>Book Title</th>
+                            <th>Requested By</th>
+                            <th>Date</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pendingRequestsTableBody">
+                        <!-- Requests will be populated here -->
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- My Requests Section (Student View) -->
+            <section id="myRequests" class="my-requests student-only">
+                <h2><i class="fas fa-history"></i> My Requests</h2>
+                <table id="myRequestsTable">
+                    <thead>
+                        <tr>
+                            <th>Book Title</th>
+                            <th>Status</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myRequestsTableBody">
+                        <!-- Student's requests will be populated here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html> 

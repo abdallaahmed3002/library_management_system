@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add required libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-books"></i> Books Management</h1>
+            <nav>
+                <a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+                <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            </nav>
+        </header>
+
+        <div class="dashboard-content">
+            <!-- Add Book Form -->
+            <section class="add-book-section">
+                <h2><i class="fas fa-plus-circle"></i> Add New Book</h2>
+                <form id="addBookForm">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-book"></i>
+                            <input type="text" id="bookTitle" placeholder="Book Title" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <i class="fas fa-user-edit"></i>
+                            <input type="text" id="bookAuthor" placeholder="Author Name" required>
+                        </div>
+                    </div>
+                    <button type="submit"><i class="fas fa-plus"></i> Add Book</button>
+                </form>
+            </section>
+
+            <!-- Search Books -->
+            <section class="search-section">
+                <h2><i class="fas fa-search"></i> Search Books</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInputBooks" placeholder="Search by title or author...">
+                    <button id="searchBooksBtn" type="button"><i class="fas fa-search"></i> Search</button>
+                </div>
+            </section>
+
+            <!-- Books Table -->
+            <section class="books-table-section">
+                <h2><i class="fas fa-list"></i> Books List</h2>
+                <table id="booksTable">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="booksTableBody">
+                        <!-- Books will be populated here -->
+                    </tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html> 

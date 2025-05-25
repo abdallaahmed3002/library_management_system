@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System - Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/mdb.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Add required libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.31/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <header>
+                    <h1><a href="dashboard.html"><i class="fas fa-book-reader "></i> <strong class="text-dark">Library Dashboard</strong></a></h1> 
+                    <!-- <h1><i class="fas fa-book-reader"></i> Library Dashboard</h1> -->
+                    <div class="user-info">
+                        <span id="userType"></span>
+                        <button onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                    </div>
+
+                </header>
+                
+                <div class="dashboard-content">
+                    <!-- Librarian View -->
+                    <div id="librarianView" class="view">
+                        <h2><i class="fas fa-user-shield"></i> Librarian Options</h2>
+                        <div class="options-grid">
+                            <a href="books.html" class="option-card">
+                                <i class="fas fa-books fa-2x"></i>
+                                <h3>Manage Books</h3>
+                                <p>Add, update, or search books in the library collection</p>
+                            </a>
+                            <a href="borrow.html" class="option-card">
+                                <i class="fas fa-hand-holding-book fa-2x"></i>
+                                <h3>Manage Borrowing</h3>
+                                <p>Issue books and handle student borrowing requests</p>
+                            </a>
+                            <div class="option-card">
+                                <i class="fas fa-chart-bar fa-2x"></i>
+                                <h3>Reports</h3>
+                                <p>Generate and export detailed library reports</p>
+                                <div class="report-options">
+                                    <button onclick="generateReport('pdf')">
+                                        <i class="fas fa-file-pdf"></i> Export as PDF
+                                    </button>
+                                    <button onclick="generateReport('excel')">
+                                        <i class="fas fa-file-excel"></i> Export as Excel
+                                    </button>
+                                    <button onclick="generateReport('csv')">
+                                        <i class="fas fa-file-csv"></i> Export as CSV
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Student View -->
+                    <div id="studentView" class="view">
+                        <h2><i class="fas fa-user-graduate"></i> Student Options</h2>
+                        <div class="options-grid">
+                            <a href="borrow.html" class="option-card">
+                                <i class="fas fa-book-reader fa-2x"></i>
+                                <h3>Request Books</h3>
+                                <p>Browse available books and submit borrowing requests</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html> 
